@@ -1,13 +1,16 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
 script: env && ./mvnw package -B
-before_deploy: ./ci/travis_beforeDeploy.sh
+before_deploy: "./ci/travis_beforeDeploy.sh"
 deploy:
-   edge: true
-   provider: cloudfoundry
-   username: tkess17@gmail.com
-   password: 
-   api: https://api.run.pivotal.io
-   organization: tkess17-org
-   space: development
+  edge: true
+  provider: cloudfoundry
+  username: tkess17@gmail.com
+  password: testpassword
+  api: https://api.run.pivotal.io
+  organization: tkess17-org
+  space: development
+env:
+  global:
+    secure: Tr4HPJO4DlJe2rOTga9Lieok7F7I4/y9SVu5s22lc8IPLyeZtp2k4yMeneDjGakdTiAUiuXJr6iW2b+UunbzTE/cymiBErpC/X3h4kuAh3UaOSdarQF5y055FIiSgpMYvq9RKKmojwI1KergHkMSQ+0L4v5E/UbaFMTiurfeAte9C83rRSKX1J/lTSngRWvFUoxK76vZTRp6plziH6m2Kr4a8aWoi4twNO/pKZm5IfPvs0gRD03reLVl/36tIAoGg4WVcQa+0gjbpSOBnPw+s4L/HyejQuVHodT4to0C/FYlO/i9aKNCIcq3ydA30HwZqHeJJOpcCLWMHRl4AQNKgBeW9THWlcDKNr/v0HnJMmgSr8yK3nJbdgwbxXP8/m5ZSQ8MUdAM7iqFmeyVC0rXu0iAIqjk5jtwwXvasWoB+KmhJTxjYQCitJB1rN03xn0OFj6xpTKT2grOV068Qa5jKUFv4uLNu7oAC4h00jAnn9F28CPLDkFlt/93jdZO7Ato8gxOD9wx8U3gbrXxk+vy0PwO0cOOOtcnaU3uGMoabxXf5TQS9xiK5IS76JEayQJ5wLeJxf4g65dNQI9xE01qs9ivunQW21OSfprct75UT3bnKCBL/KhLTaYEsKTuQFouJ/S2cKeEoxjoPP0pbyErjsNIImlVjfZ89DEEkMgXNCo=
