@@ -8,3 +8,4 @@ build/
 .springBeans
 /.apt_generated/
 build/
+.idea/
